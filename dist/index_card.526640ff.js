@@ -406,7 +406,7 @@ heroDefenseNode.appendChild(heroMagicResistDom);
 var heroAbilitiesTalentNode = heroCardFrontNode.getElementsByClassName("hero-abilities-talent")[0];
 var heroScepterShardNode = document.createElement("img");
 heroScepterShardNode.classList.add("hero-scepter-shard");
-heroScepterShardNode.setAttribute("src", "/src/images/aghs_scepter.png");
+heroScepterShardNode.setAttribute("src", "./images/aghs_scepter.png");
 heroScepterShardNode.setAttribute("alt", "Dota2 scepter Shard");
 heroAbilitiesTalentNode.append(heroScepterShardNode);
 
@@ -443,10 +443,10 @@ var main = /*#__PURE__*/function () {
                     while (1) switch (_context.prev = _context.next) {
                       case 0:
                         // first reset something
-                        heroVideoNode.setAttribute("src", "./src/images/Dota2Logo.svg");
-                        heroVideoNode.setAttribute("poster", "./src/images/Dota2Logo.svg");
-                        heroVideoSourceNode.setAttribute("src", "./src/images/Dota2Logo.svg");
-                        heroVideoNodeFallbackImgNode.setAttribute("src", "./src/images/Dota2Logo.svg");
+                        heroVideoNode.setAttribute("src", "./images/Dota2Logo.svg");
+                        heroVideoNode.setAttribute("poster", "./images/Dota2Logo.svg");
+                        heroVideoSourceNode.setAttribute("src", "./images/Dota2Logo.svg");
+                        heroVideoNodeFallbackImgNode.setAttribute("src", "./images/Dota2Logo.svg");
                         // flip the card to back first
                         heroCardNode.style.transform = "rotateY(0deg)";
                         heroPrimaryAttrNode.style.display = "none";
@@ -659,7 +659,7 @@ function setHeroBase(primaryAttribute, agilityBase, agilityGain, intelligenceBas
  * @param {string} primaryAttribute - Hero primary attribute
  */
 function setHeroPrimaryAttribute(primaryAttribute) {
-  heroPrimaryAttrDom.setAttribute("src", "../images/".concat(_constants.PRIMARY_ATTR_LIST[primaryAttribute], ".png"));
+  heroPrimaryAttrDom.setAttribute("src", "./images/".concat(_constants.PRIMARY_ATTR_LIST[primaryAttribute], ".png"));
 }
 
 /**
@@ -750,7 +750,7 @@ function setHeroAbilities(abilities) {
   } finally {
     _iterator3.f();
   }
-  heroScepterShardNode.setAttribute("src", "./src/images/aghs_".concat(!!abilitiesIsGrantedByScepter ? 1 : 0, "_scepter_").concat(!!abilitiesIsGrantedByShard ? 1 : 0, ".png"));
+  heroScepterShardNode.setAttribute("src", "./images/aghs_".concat(!!abilitiesIsGrantedByScepter ? 1 : 0, "_scepter_").concat(!!abilitiesIsGrantedByShard ? 1 : 0, ".png"));
 }
 
 // {
@@ -1096,7 +1096,7 @@ function abilityScepterShardCommonContent(spellImmunity, manaCost, cooldown, att
   var unitTargetTeamHTML = unitTargetTeam ? "\n  <div class=\"item-row\"><label>DAMAGE AFFECTS: <label><span>\n      ".concat((0, _utils.formatText)(_constants.DOTA_UNIT_TARGET_TEAM[unitTargetTeam], "_", 4), "\n  </span></div>") : "";
   var spellImmunityText = spellImmunity !== 4 ? "green-txt" : "red-txt";
   var spellImmunityHTML = spellImmunity ? "\n  <div class=\"item-row\"><label>PIERCES SPELL IMMUNITY: <label><span class=\"".concat(spellImmunityText, "\">\n      ").concat(_constants.SPELL_IMMUNITY_LIST[spellImmunity], "\n</span></div>\n  ") : "";
-  return "<div class=\"item-sub box\">\n    ".concat(unitTargetTeamHTML, "\n    ").concat(dispellableHTML, "\n    ").concat(dmgTypeHTML, "\n    ").concat(spellImmunityHTML, "\n  </div>\n\n  ").concat(description ? "<div class=\"item-desc box\">".concat(description[0], "</div>") : "", "\n  ").concat(attributes ? "<div class=\"item-sub box\"> ".concat(attribData, " </div>") : "", "\n\n  ").concat(manaCost !== null && cooldown !== null ? "\n    <div class=\"item-mc-cd\">\n      ".concat(manaCost !== null ? "\n        <span class=\"item-mc\">\n          <span class=\"mana-icon\"></span>".concat(mcData, "\n        </span>\n      ") : "", "\n      ").concat(cooldown !== null ? "\n        <span class=\"item-cd\">\n          <img width=\"15px\" height=\"15px\" alt=\"cooldown\" src=\"./src/images/cooldown.png\"/>".concat(cdData, "\n        </span>\n      ") : "", "\n    </div>\n    ") : "");
+  return "<div class=\"item-sub box\">\n    ".concat(unitTargetTeamHTML, "\n    ").concat(dispellableHTML, "\n    ").concat(dmgTypeHTML, "\n    ").concat(spellImmunityHTML, "\n  </div>\n\n  ").concat(description ? "<div class=\"item-desc box\">".concat(description[0], "</div>") : "", "\n  ").concat(attributes ? "<div class=\"item-sub box\"> ".concat(attribData, " </div>") : "", "\n\n  ").concat(manaCost !== null && cooldown !== null ? "\n    <div class=\"item-mc-cd\">\n      ".concat(manaCost !== null ? "\n        <span class=\"item-mc\">\n          <span class=\"mana-icon\"></span>".concat(mcData, "\n        </span>\n      ") : "", "\n      ").concat(cooldown !== null ? "\n        <span class=\"item-cd\">\n          <img width=\"15px\" height=\"15px\" alt=\"cooldown\" src=\"./images/cooldown.png\"/>".concat(cdData, "\n        </span>\n      ") : "", "\n    </div>\n    ") : "");
 }
 
 // scepter modal
@@ -1152,7 +1152,7 @@ function setHeroScepterShard(abilities) {
 var scepterShardTooltipTem = function scepterShardTooltipTem(ability, isScepterOrShard) {
   // if no ability, show no data but some UI
   if (!ability) {
-    return "\n      <div class=\"".concat(isScepterOrShard, " scepter-shard-row\">\n        <div class=\"item-main\">\n          <img src=\"./src/images/").concat(isScepterOrShard, "_0.png\" alt=\"").concat(isScepterOrShard, " img\" />\n          <div class=\"item-main-right\">\n            <h3>Aghanim's ").concat(isScepterOrShard, "</h3>\n          </div>\n        </div>\n        <div class=\"no-detail\">Current the hero does not have Aghanim</div>\n      </div>\n    ");
+    return "\n      <div class=\"".concat(isScepterOrShard, " scepter-shard-row\">\n        <div class=\"item-main\">\n          <img src=\"./images/").concat(isScepterOrShard, "_0.png\" alt=\"").concat(isScepterOrShard, " img\" />\n          <div class=\"item-main-right\">\n            <h3>Aghanim's ").concat(isScepterOrShard, "</h3>\n          </div>\n        </div>\n        <div class=\"no-detail\">Current the hero does not have Aghanim</div>\n      </div>\n    ");
   }
   var _ability$ability2 = ability["ability"],
     stat = _ability$ability2.stat,
@@ -1344,7 +1344,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35769" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33399" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

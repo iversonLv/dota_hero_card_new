@@ -330,7 +330,7 @@ var filterHeroesBasePrimaryAttr = function filterHeroesBasePrimaryAttr(heroes, p
   } finally {
     _iterator.f();
   }
-  return "\n   <div class=\"hero-list-".concat(_constants.PRIMARY_ATTR_LIST[primaryAttribute], "\">\n    <h2 class=\"hero-list-heading\">\n      <img src=\"./src/images/").concat(_constants.PRIMARY_ATTR_LIST[primaryAttribute], ".png\" />\n      ").concat((0, _utils.formatText)(_constants.PRIMARY_ATTR_LIST[primaryAttribute], "_", 1), "\n    </h2>\n    ").concat(list.innerHTML, "\n   </div>\n   ");
+  return "\n   <div class=\"hero-list-".concat(_constants.PRIMARY_ATTR_LIST[primaryAttribute], "\">\n    <h2 class=\"hero-list-heading\">\n      <img src=\"./images/").concat(_constants.PRIMARY_ATTR_LIST[primaryAttribute], ".png\" />\n      ").concat((0, _utils.formatText)(_constants.PRIMARY_ATTR_LIST[primaryAttribute], "_", 1), "\n    </h2>\n    ").concat(list.innerHTML, "\n   </div>\n   ");
 };
 
 /* hero complexity filter bar */
@@ -405,7 +405,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35769" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33399" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

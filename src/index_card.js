@@ -142,7 +142,7 @@ const heroAbilitiesTalentNode = heroCardFrontNode.getElementsByClassName(
 )[0];
 const heroScepterShardNode = document.createElement("img");
 heroScepterShardNode.classList.add("hero-scepter-shard");
-heroScepterShardNode.setAttribute("src", "/src/images/aghs_scepter.png");
+heroScepterShardNode.setAttribute("src", "./images/aghs_scepter.png");
 heroScepterShardNode.setAttribute("alt", "Dota2 scepter Shard");
 heroAbilitiesTalentNode.append(heroScepterShardNode);
 
@@ -175,12 +175,12 @@ const main = async () => {
   for (let heroCard of heroCards) {
     heroCard.addEventListener("click", async (e) => {
       // first reset something
-      heroVideoNode.setAttribute("src", "./src/images/Dota2Logo.svg");
-      heroVideoNode.setAttribute("poster", "./src/images/Dota2Logo.svg");
-      heroVideoSourceNode.setAttribute("src", "./src/images/Dota2Logo.svg");
+      heroVideoNode.setAttribute("src", "./images/Dota2Logo.svg");
+      heroVideoNode.setAttribute("poster", "./images/Dota2Logo.svg");
+      heroVideoSourceNode.setAttribute("src", "./images/Dota2Logo.svg");
       heroVideoNodeFallbackImgNode.setAttribute(
         "src",
-        "./src/images/Dota2Logo.svg"
+        "./images/Dota2Logo.svg"
       );
       // flip the card to back first
       heroCardNode.style.transform = "rotateY(0deg)";
@@ -477,7 +477,7 @@ function setHeroBase(
 function setHeroPrimaryAttribute(primaryAttribute) {
   heroPrimaryAttrDom.setAttribute(
     "src",
-    `../images/${PRIMARY_ATTR_LIST[primaryAttribute]}.png`
+    `./images/${PRIMARY_ATTR_LIST[primaryAttribute]}.png`
   );
 }
 
@@ -587,7 +587,7 @@ function setHeroAbilities(abilities) {
   // show the shard icon/scepter icon
   heroScepterShardNode.setAttribute(
     "src",
-    `./src/images/aghs_${!!abilitiesIsGrantedByScepter ? 1 : 0}_scepter_${
+    `./images/aghs_${!!abilitiesIsGrantedByScepter ? 1 : 0}_scepter_${
       !!abilitiesIsGrantedByShard ? 1 : 0
     }.png`
   );
@@ -987,7 +987,7 @@ function abilityScepterShardCommonContent(
         cooldown !== null
           ? `
         <span class="item-cd">
-          <img width="15px" height="15px" alt="cooldown" src="./src/images/cooldown.png"/>${cdData}
+          <img width="15px" height="15px" alt="cooldown" src="./images/cooldown.png"/>${cdData}
         </span>
       `
           : ""
@@ -1065,7 +1065,7 @@ const scepterShardTooltipTem = (ability, isScepterOrShard) => {
     return `
       <div class="${isScepterOrShard} scepter-shard-row">
         <div class="item-main">
-          <img src="./src/images/${isScepterOrShard}_0.png" alt="${isScepterOrShard} img" />
+          <img src="./images/${isScepterOrShard}_0.png" alt="${isScepterOrShard} img" />
           <div class="item-main-right">
             <h3>Aghanim's ${isScepterOrShard}</h3>
           </div>

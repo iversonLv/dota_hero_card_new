@@ -61,7 +61,7 @@ const filterHeroesBasePrimaryAttr = (heroes, primaryAttribute) => {
   return `
    <div class="hero-list-${PRIMARY_ATTR_LIST[primaryAttribute]}">
     <h2 class="hero-list-heading">
-      <img src="./src/images/${PRIMARY_ATTR_LIST[primaryAttribute]}.png" />
+      <img src="./images/${PRIMARY_ATTR_LIST[primaryAttribute]}.png" />
       ${formatText(PRIMARY_ATTR_LIST[primaryAttribute], "_", 1)}
     </h2>
     ${list.innerHTML}
