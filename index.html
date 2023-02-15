@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Dota2 heroes cards</title>
+	<link href="./src/styles.css" rel="stylesheet"></link>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<h1 class="heading">Welcome to Dota2 heroes cards</h1>
+
+	<!-- Part card -->
+	<div class="hero-card">
+		<!-- back -->
+		<div class="hero-card-back">
+			<img src="./images/Dota2Logo.svg" alt="" />
+		</div>
+		<!-- front -->
+		<div class="hero-card-front">
+				<!-- <div class="hero-primary_attr"></div> -->
+			<!-- decorate the card looked good -->
+			<span class="hero-bg"></span>
+			<div class="hero-decoration-container">
+				<div class="hero-decoration"></div>
+			</div>
+			<div class="hero-base"></div>
+			<div class="card-main">
+				<!-- hero abilities -->
+				<div class="hero-abilities-talent">
+					<!-- hero talent icon -->
+					<img src="./images/talent_tree.svg" alt="talent tree" class="hero-talent">
+					<div class="hero-abilities-list"></div>
+				</div>
+				<div class="card-main-right">
+					<!-- hero image/video -->
+					<video src="./images/Dota2Logo.svg" class="hero-video" autoplay="" preload="auto" loop="" playsinline=""></video>
+					<!-- hero mp hp -->
+					<div class="hero-mp-hp"></div>
+					<!-- hero name -->
+					<h1 class="hero-name"></h1>
+					<!-- hero roles -->
+					<div class="hero-roles"></div>
+					<!-- hero info -->
+					<div class="hero-info">
+						<div class="hero-attack">
+							<h2>ATTACK</h2>
+						</div>
+						<div class="hero-defense">
+							<h2>DEFENSE</h2>
+						</div>
+						<div class="hero-mobility">
+							<h2>MOBILITY</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- hero complexity filter bar -->
+	<div class="hero-filter-bar">
+		<div class="hero-filter hero-filter-complexity">
+			<label for="">COMPLEXITY:</label>
+			<span class="complexity" data-complexity-value="1" data-selected="false"></span>
+			<span class="complexity" data-complexity-value="2" data-selected="false"></span>
+			<span class="complexity" data-complexity-value="3" data-selected="false"></span>
+		</div>
+	</div>
+
+	<!-- heroes lists -->
+	<div class="hero-list"></div>
+	<div class="tooltip talent-tooltip">
+		
+	</div>
+	<div class="tooltip ability-tooltip"></div>
+	<div class="tooltip-alt scepter-shard-tooltip"></div>
+	
+	<script type="module" src="src/index.js">
+	</script>
+	<script type="module" src="src/index_card.js"></script>
+</body>
+
+</html>
