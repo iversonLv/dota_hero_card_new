@@ -1,10 +1,10 @@
 export const PRIMARY_ATTR_LIST = {
   str: "hero_strength",
   int: "hero_intelligence",
-  agi: "hero_agility"
+  agi: "hero_agility",
 };
 
-export const IMG_ONERROR = "../images/Dota2Logo.svg";
+export const IMG_ONERROR = "./images/Dota2Logo.svg";
 
 export const BASE_HEALTH = 200;
 export const HP_UNIT = 20;
@@ -21,7 +21,7 @@ export const DAMAGE_TYPE = {
   2: "DAMAGE_TYPE_MAGICAL",
   4: "DAMAGE_TYPE_PURE",
   7: "DAMAGE_TYPE_ALL",
-  8: "DAMAGE_TYPE_HP_REMOVAL"
+  8: "DAMAGE_TYPE_HP_REMOVAL",
 };
 
 export const DOTA_UNIT_TARGET_TEAM = {
@@ -29,11 +29,11 @@ export const DOTA_UNIT_TARGET_TEAM = {
   1: "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
   2: "DOTA_UNIT_TARGET_TEAM_ENEMY",
   3: "DOTA_UNIT_TARGET_TEAM_BOTH",
-  4: "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+  4: "DOTA_UNIT_TARGET_TEAM_CUSTOM",
 };
 
 export const SPELL_IMMUNITY_LIST = {
   1: "Yes",
   3: "Yes",
-  4: "No"
+  4: "No",
 };

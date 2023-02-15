@@ -18,7 +18,7 @@
   --basic-shadow-8: 0 0 8px #000;
   --basic-shadow-3: 0 0 3px #000;
 
-  background-image: url(../images/greyfade.jpg);
+  background-image: url(/greyfade.22b7bf2e.jpg);
   background-size: cover;
 }
 
@@ -69,7 +69,7 @@ body {
 }
 
 .hero-filter-complexity .complexity {
-  background: url(../images/filter-diamond.png) no-repeat 0 0;
+  background: url(/filter-diamond.f44a9be3.png) no-repeat 0 0;
   filter: brightness(0.5) saturate(0);
   width: 43px;
   height: 35px;
@@ -97,7 +97,7 @@ body {
 .heroes-card img {
   width: 100%;
   height: 100%;
-  background: url("../images/Dota2Logo.svg") no-repeat center center;
+  background: url("/Dota2Logo.7ebd6fb1.svg") no-repeat center center;
   background-size: contain;
 }
 
@@ -152,7 +152,7 @@ body {
 .hero-card-back {
   backface-visibility: hidden;
   border-radius: inherit;
-  background-image: url(../images/greyfade.jpg);
+  background-image: url(/greyfade.22b7bf2e.jpg);
   background-size: 100% 100%;
   background-color: rgb(21, 27, 29);
   position: absolute;
@@ -171,7 +171,7 @@ body {
 }
 
 .hero-bg {
-  background-image: url(../images/greyfade.jpg);
+  background-image: url(/greyfade.22b7bf2e.jpg);
   background-color: rgb(21, 27, 29);
   background-size: 100% 100%;
   width: 100%;
@@ -233,7 +233,7 @@ body {
 }
 
 .hero-base-str-gain {
-  background-image: url(../images/hero_strength.png);
+  background-image: url(/hero_strength.c7ab963e.png);
 }
 
 .hero-base-str-gain.primary-att {
@@ -246,7 +246,7 @@ body {
 }
 
 .hero-base-int-gain {
-  background-image: url(../images/hero_intelligence.png);
+  background-image: url(/hero_intelligence.914819dc.png);
 }
 
 .hero-base-int-gain.primary-att {
@@ -259,7 +259,7 @@ body {
 }
 
 .hero-base-agi-gain {
-  background-image: url(../images/hero_agility.png);
+  background-image: url(/hero_agility.9c522db1.png);
 }
 
 .hero-base-agi-gain.primary-att {
@@ -350,7 +350,7 @@ body {
 }
 
 .hero-abilities-list img {
-  background-image: url(../images/Dota2Logo.svg);
+  background-image: url(/Dota2Logo.7ebd6fb1.svg);
   background-size: contain;
 }
 
@@ -395,35 +395,35 @@ body {
 }
 
 .hero-info .hero-base_attack {
-  background-image: url(../images/icon_damage.png);
+  background-image: url(/icon_damage.f3f1956f.png);
 }
 
 .hero-info .hero-attack_rate {
-  background-image: url(../images/icon_attack_time.png);
+  background-image: url(/icon_attack_time.fd01d41a.png);
 }
 
 .hero-info .hero-attack_range {
-  background-image: url(../images/icon_attack_range.png);
+  background-image: url(/icon_attack_range.774ffacf.png);
 }
 
 .hero-info .hero-armor {
-  background-image: url(../images/icon_armor.png);
+  background-image: url(/icon_armor.a2b9cd34.png);
 }
 
 .hero-info .hero-magic_resist {
-  background-image: url(../images/icon_magic_resist.png);
+  background-image: url(/icon_magic_resist.d7a66376.png);
 }
 
 .hero-info .hero-turn_rate {
-  background-image: url(../images/icon_turn_rate.png);
+  background-image: url(/icon_turn_rate.e40becab.png);
 }
 
 .hero-info .hero-move_speed {
-  background-image: url(../images/icon_movement_speed.png);
+  background-image: url(/icon_movement_speed.d594a135.png);
 }
 
 .hero-info .hero-vision {
-  background-image: url(../images/icon_vision.png);
+  background-image: url(/icon_vision.d2dd6582.png);
 }
 
 /* hero-video*/
@@ -444,7 +444,7 @@ video {
 
 .hero-complexity-num {
   filter: brightness(1) saturate(1);
-  background: url(../images/filter-diamond.png) no-repeat 0 0;
+  background: url(/filter-diamond.f44a9be3.png) no-repeat 0 0;
   background-size: contain;
   width: 21px;
   height: 17px;
@@ -501,7 +501,7 @@ video {
   position: absolute;
   z-index: 999;
   box-shadow: var(--basic-shadow-8);
-  background-image: url(../images/greyfade.jpg);
+  background-image: url(/greyfade.22b7bf2e.jpg);
   background-color: rgb(21, 27, 29);
 }
 .talent-tooltip {
@@ -515,7 +515,7 @@ video {
 }
 
 .talent-tooltip .talent-bg-img {
-  background: url(../images/talent_tree.svg) no-repeat 50% 50%;
+  background: url(/talent_tree.ae8549b7.svg) no-repeat 50% 50%;
   position: absolute;
   width: 227px;
   height: 95%;
@@ -592,7 +592,7 @@ video {
   height: 50px;
   box-shadow: var(--basic-shadow-3);
   background-size: contain;
-  background-image: url(../images/Dota2Logo.svg);
+  background-image: url(/Dota2Logo.7ebd6fb1.svg);
 }
 
 .item-main .item-main-right {
@@ -683,13 +683,13 @@ video {
   margin: 0;
   opacity: 0.9;
   height: 15px;
-  background-image: url(../images/greyfade.jpg);
+  background-image: url(/greyfade.22b7bf2e.jpg);
 }
 
 .scepter-shard-row {
   border: 2px solid #000;
   padding: 10px;
-  background-image: url(../images/greyfade.jpg);
+  background-image: url(/greyfade.22b7bf2e.jpg);
   background-color: var(--dark-surface);
   box-shadow: var(--basic-shadow-8);
 }
@@ -744,7 +744,7 @@ video {
   width: 40px;
   height: 40px;
   background-size: contain;
-  background-image: url(../images/Dota2Logo.svg);
+  background-image: url(/Dota2Logo.7ebd6fb1.svg);
   box-shadow: var(--basic-shadow-3);
 }
 
@@ -753,3 +753,6 @@ video {
   text-align: center;
   color: var(--light-white);
 }
+
+
+/*# sourceMappingURL=/styles.dd855970.css.map */

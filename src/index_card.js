@@ -1,6 +1,6 @@
-import { heroQuery } from "../query/hero.js";
-import { rolesQuery } from "../query/roles.js";
-import { abilitiesQuery } from "../query/abilities.js";
+import { heroQuery } from "./query/hero.js";
+import { rolesQuery } from "./query/roles.js";
+import { abilitiesQuery } from "./query/abilities.js";
 
 // constants
 import {
@@ -14,13 +14,13 @@ import {
   BOUNUS_MANA_REGENERATION,
   DAMAGE_TYPE,
   DOTA_UNIT_TARGET_TEAM,
-  SPELL_IMMUNITY_LIST
-} from "../constants.js";
+  SPELL_IMMUNITY_LIST,
+} from "./constants.js";
 
-import { STRATZ_ABILITIE_URL, VIDEO_URL } from "../config.js";
+import { STRATZ_ABILITIE_URL, VIDEO_URL } from "./config.js";
 
 // pipe
-import { getGraphqlData, formatText } from "../utils.js";
+import { getGraphqlData, formatText } from "./utils.js";
 
 // init state
 let heroId = 1;
@@ -89,15 +89,12 @@ const heroNameNode = heroCardFrontNode.getElementsByClassName("hero-name")[0];
 const heroRolesNode = heroCardFrontNode.getElementsByClassName("hero-roles")[0];
 
 // hero info
-const heroAttackNode = heroCardFrontNode.getElementsByClassName(
-  "hero-attack"
-)[0];
-const heroDefenseNode = heroCardFrontNode.getElementsByClassName(
-  "hero-defense"
-)[0];
-const heroMobilityNode = heroCardFrontNode.getElementsByClassName(
-  "hero-mobility"
-)[0];
+const heroAttackNode =
+  heroCardFrontNode.getElementsByClassName("hero-attack")[0];
+const heroDefenseNode =
+  heroCardFrontNode.getElementsByClassName("hero-defense")[0];
+const heroMobilityNode =
+  heroCardFrontNode.getElementsByClassName("hero-mobility")[0];
 
 // base_attack
 const heroBaseAttackDom = document.createElement("span");
@@ -145,25 +142,22 @@ const heroAbilitiesTalentNode = heroCardFrontNode.getElementsByClassName(
 )[0];
 const heroScepterShardNode = document.createElement("img");
 heroScepterShardNode.classList.add("hero-scepter-shard");
-heroScepterShardNode.setAttribute("src", "../images/aghs_scepter.png");
+heroScepterShardNode.setAttribute("src", "./images/aghs_scepter.png");
 heroScepterShardNode.setAttribute("alt", "Dota2 scepter Shard");
 heroAbilitiesTalentNode.append(heroScepterShardNode);
 
 // talent tooltip
 
-const heroTalentNode = heroCardFrontNode.getElementsByClassName(
-  "hero-talent"
-)[0];
-const heroTalentTooltipNode = document.getElementsByClassName(
-  "talent-tooltip"
-)[0];
+const heroTalentNode =
+  heroCardFrontNode.getElementsByClassName("hero-talent")[0];
+const heroTalentTooltipNode =
+  document.getElementsByClassName("talent-tooltip")[0];
 
 // default tooltip should not display
 heroTalentTooltipNode.style.display = "none";
 
-const heroAbilityTooltipNode = document.getElementsByClassName(
-  "ability-tooltip"
-)[0];
+const heroAbilityTooltipNode =
+  document.getElementsByClassName("ability-tooltip")[0];
 
 heroAbilityTooltipNode.style.display = "none";
 
@@ -214,14 +208,8 @@ async function init(heroId) {
     heroAttackTypeNode.style.display = "flex";
   }
 
-  const {
-    abilities,
-    stats,
-    shortName,
-    language,
-    roles,
-    talents
-  } = heroData.data.constants.hero;
+  const { abilities, stats, shortName, language, roles, talents } =
+    heroData.data.constants.hero;
 
   const {
     primaryAttribute,
@@ -244,7 +232,7 @@ async function init(heroId) {
     startingDamageMin,
     startingDamageMax,
     visionNighttimeRange,
-    visionDaytimeRange
+    visionDaytimeRange,
   } = stats;
 
   updateHero(
@@ -489,7 +477,7 @@ function setHeroBase(
 function setHeroPrimaryAttribute(primaryAttribute) {
   heroPrimaryAttrDom.setAttribute(
     "src",
-    `../images/${PRIMARY_ATTR_LIST[primaryAttribute]}.png`
+    `./images/${PRIMARY_ATTR_LIST[primaryAttribute]}.png`
   );
 }
 
@@ -500,7 +488,7 @@ function setHeroPrimaryAttribute(primaryAttribute) {
 function setHeroAttackType(attackType) {
   heroAttackTypeDom.setAttribute(
     "src",
-    `../images/${attackType.toLowerCase()}.svg`
+    `./images/${attackType.toLowerCase()}.svg`
   );
 }
 
@@ -793,9 +781,8 @@ heroTalentNode.addEventListener("mouseout", (e) => {
 
 // ability tooltip
 function setHeroAbilityHover(abilities) {
-  const heroAbilitiesList = heroCardFrontNode.getElementsByClassName(
-    "hero-ability"
-  );
+  const heroAbilitiesList =
+    heroCardFrontNode.getElementsByClassName("hero-ability");
   for (let i of heroAbilitiesList) {
     i.addEventListener("mouseover", (e) => {
       const heroAbility = e.target;
@@ -878,7 +865,7 @@ const abilityTooltipTem = (abilityName, abilities) => {
     unitDamageType,
     dispellable,
     unitTargetTeam,
-    spellImmunity
+    spellImmunity,
   } = stat;
   const { displayName, description } = language || {};
   const imgData = `${STRATZ_ABILITIE_URL}/${name}.png`;
@@ -1097,7 +1084,7 @@ const scepterShardTooltipTem = (ability, isScepterOrShard) => {
     unitDamageType,
     dispellable,
     spellImmunity,
-    unitTargetTeam
+    unitTargetTeam,
   } = stat;
   const { aghanimDescription, description, displayName, shardDescription } =
     language || {};
@@ -1164,7 +1151,7 @@ const pushEl = (t) => {
     offsetHeight,
     offsetWidth,
     width,
-    height
+    height,
   } = t;
   return {
     className,
@@ -1173,7 +1160,7 @@ const pushEl = (t) => {
     offsetHeight,
     offsetWidth,
     width,
-    height
+    height,
   };
 };
 

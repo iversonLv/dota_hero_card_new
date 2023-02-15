@@ -1,14 +1,14 @@
 // import
-import { heroesQuery } from "../query/heroes.js";
+import { heroesQuery } from "./query/heroes.js";
 
 // config
-import { STRATZ_HERO_URL } from "../config.js";
+import { STRATZ_HERO_URL } from "./config.js";
 
 // constants
-import { PRIMARY_ATTR_LIST } from "../constants.js";
+import { PRIMARY_ATTR_LIST } from "./constants.js";
 
 // pipe
-import { getGraphqlData, formatText } from "../utils.js";
+import { getGraphqlData, formatText } from "./utils.js";
 
 // inti state
 let heroesData;
@@ -61,7 +61,7 @@ const filterHeroesBasePrimaryAttr = (heroes, primaryAttribute) => {
   return `
    <div class="hero-list-${PRIMARY_ATTR_LIST[primaryAttribute]}">
     <h2 class="hero-list-heading">
-      <img src="../images/${PRIMARY_ATTR_LIST[primaryAttribute]}.png" />
+      <img src="./images/${PRIMARY_ATTR_LIST[primaryAttribute]}.png" />
       ${formatText(PRIMARY_ATTR_LIST[primaryAttribute], "_", 1)}
     </h2>
     ${list.innerHTML}
