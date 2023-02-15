@@ -1,4 +1,4 @@
-import { STRATZ_TOKEN, STRATZ_API } from "../config.js";
+import { STRATZ_TOKEN, STRATZ_API } from "./config.js";
 
 export // graphql fun
 const getGraphqlData = async (query) => {
@@ -7,8 +7,8 @@ const getGraphqlData = async (query) => {
     body: query,
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${STRATZ_TOKEN}`
-    }
+      Authorization: `Bearer ${STRATZ_TOKEN}`,
+    },
   });
   let data = await response.json();
   return data;
