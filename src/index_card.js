@@ -20,6 +20,8 @@ import scepter1 from "../images/scepter_1.png";
 import shard0 from "../images/shard_0.png";
 import shard1 from "../images/shard_1.png";
 
+import cooldownIcon from "../images/cooldown.png";
+
 // constants
 import {
   PRIMARY_ATTR_LIST,
@@ -1013,7 +1015,7 @@ function abilityScepterShardCommonContent(
         cooldown !== null
           ? `
         <span class="item-cd">
-          <img width="15px" height="15px" alt="cooldown" src="./images/cooldown.png"/>${cdData}
+          <img width="15px" height="15px" alt="cooldown" src="${cooldownIcon}"/>${cdData}
         </span>
       `
           : ""
