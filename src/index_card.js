@@ -2,6 +2,24 @@ import { heroQuery } from "./query/hero.js";
 import { rolesQuery } from "./query/roles.js";
 import { abilitiesQuery } from "./query/abilities.js";
 
+// image
+import heroAgility from "../images/hero_agility.png";
+import heroStrength from "../images/hero_strength.png";
+import heroIntelligence from "../images/hero_intelligence.png";
+import melee from "../images/melee.svg";
+import ranged from "../images/ranged.svg";
+import aghsScepter from "../images/aghs_scepter.png";
+import aghs1scepter1 from "../images/aghs_1_scepter_1.png";
+import aghs0scepter0 from "../images/aghs_0_scepter_0.png";
+import aghs1scepter0 from "../images/aghs_1_scepter_0.png";
+import aghs0scepter1 from "../images/aghs_0_scepter_1.png";
+
+import scepter0 from "../images/scepter_0.png";
+import scepter1 from "../images/scepter_1.png";
+
+import shard0 from "../images/shard_0.png";
+import shard1 from "../images/shard_1.png";
+
 // constants
 import {
   PRIMARY_ATTR_LIST,
@@ -142,7 +160,7 @@ const heroAbilitiesTalentNode = heroCardFrontNode.getElementsByClassName(
 )[0];
 const heroScepterShardNode = document.createElement("img");
 heroScepterShardNode.classList.add("hero-scepter-shard");
-heroScepterShardNode.setAttribute("src", "./images/aghs_scepter.png");
+heroScepterShardNode.setAttribute("src", aghsScepter);
 heroScepterShardNode.setAttribute("alt", "Dota2 scepter Shard");
 heroAbilitiesTalentNode.append(heroScepterShardNode);
 
@@ -475,10 +493,15 @@ function setHeroBase(
  * @param {string} primaryAttribute - Hero primary attribute
  */
 function setHeroPrimaryAttribute(primaryAttribute) {
-  heroPrimaryAttrDom.setAttribute(
-    "src",
-    `./images/${PRIMARY_ATTR_LIST[primaryAttribute]}.png`
-  );
+  let pA = "";
+  if (PRIMARY_ATTR_LIST[primaryAttribute] === "hero_agility") {
+    pA = heroAgility;
+  } else if (PRIMARY_ATTR_LIST[primaryAttribute] === "hero_strength") {
+    pA = heroStrength;
+  } else {
+    pA = heroIntelligence;
+  }
+  heroPrimaryAttrDom.setAttribute("src", pA);
 }
 
 /**
@@ -486,10 +509,8 @@ function setHeroPrimaryAttribute(primaryAttribute) {
  * @param {string} attackType - Hero attack type
  */
 function setHeroAttackType(attackType) {
-  heroAttackTypeDom.setAttribute(
-    "src",
-    `./images/${attackType.toLowerCase()}.svg`
-  );
+  let aT = attackType.toLowerCase() === "melee" ? melee : ranged;
+  heroAttackTypeDom.setAttribute("src", aT);
 }
 
 /**
@@ -585,12 +606,17 @@ function setHeroAbilities(abilities) {
     heroAbilitiesListNode.appendChild(heroAbilityDom);
   }
   // show the shard icon/scepter icon
-  heroScepterShardNode.setAttribute(
-    "src",
-    `./images/aghs_${!!abilitiesIsGrantedByScepter ? 1 : 0}_scepter_${
-      !!abilitiesIsGrantedByShard ? 1 : 0
-    }.png`
-  );
+  let aghsScepter = "";
+  if (!!abilitiesIsGrantedByScepter && !!abilitiesIsGrantedByShard) {
+    aghsScepter = aghs1scepter1;
+  } else if (!!abilitiesIsGrantedByScepter && !abilitiesIsGrantedByShard) {
+    aghsScepter = aghs1scepter0;
+  } else if (!abilitiesIsGrantedByScepter && !!abilitiesIsGrantedByShard) {
+    aghsScepter = aghs0scepter1;
+  } else {
+    aghsScepter = aghs0scepter0;
+  }
+  heroScepterShardNode.setAttribute("src", aghsScepter);
 }
 
 // {
@@ -1061,11 +1087,12 @@ function setHeroScepterShard(abilities) {
 
 const scepterShardTooltipTem = (ability, isScepterOrShard) => {
   // if no ability, show no data but some UI
+  let noIcon = isScepterOrShard === "scepter" ? scepter0 : shard0;
   if (!ability) {
     return `
       <div class="${isScepterOrShard} scepter-shard-row">
         <div class="item-main">
-          <img src="./images/${isScepterOrShard}_0.png" alt="${isScepterOrShard} img" />
+          <img src="${noIcon}" alt="${isScepterOrShard} img" />
           <div class="item-main-right">
             <h3>Aghanim's ${isScepterOrShard}</h3>
           </div>
@@ -1118,10 +1145,11 @@ const scepterShardTooltipTem = (ability, isScepterOrShard) => {
     );
   }
 
+  let hasIcon = isScepterOrShard === "scepter" ? scepter1 : shard1;
   return `
       <div class="${isScepterOrShard} scepter-shard-row">
         <div class="item-main">
-          <img src="../images/${isScepterOrShard}_1.png" alt="${isScepterOrShard} img" />
+          <img src="${hasIcon}" alt="${isScepterOrShard} img" />
           <div class="item-main-right">
             <h3>Aghanim's ${isScepterOrShard}</h3>
           </div>

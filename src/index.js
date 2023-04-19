@@ -10,6 +10,11 @@ import { PRIMARY_ATTR_LIST } from "./constants.js";
 // pipe
 import { getGraphqlData, formatText } from "./utils.js";
 
+// images
+import heroAgility from "../images/hero_agility.png";
+import heroStrength from "../images/hero_strength.png";
+import heroIntelligence from "../images/hero_intelligence.png";
+
 // inti state
 let heroesData;
 
@@ -58,10 +63,20 @@ const filterHeroesBasePrimaryAttr = (heroes, primaryAttribute) => {
     heroNode.append(heroImgNode);
     list.appendChild(heroNode);
   }
+
+  let pA = "";
+  if (PRIMARY_ATTR_LIST[primaryAttribute] === "hero_agility") {
+    pA = heroAgility;
+  } else if (PRIMARY_ATTR_LIST[primaryAttribute] === "hero_strength") {
+    pA = heroStrength;
+  } else {
+    pA = heroIntelligence;
+  }
+
   return `
    <div class="hero-list-${PRIMARY_ATTR_LIST[primaryAttribute]}">
     <h2 class="hero-list-heading">
-      <img src="./images/${PRIMARY_ATTR_LIST[primaryAttribute]}.png" />
+      <img src="${pA}" />
       ${formatText(PRIMARY_ATTR_LIST[primaryAttribute], "_", 1)}
     </h2>
     ${list.innerHTML}
