@@ -14,6 +14,7 @@ import { getGraphqlData, formatText } from "./utils.js";
 import heroAgility from "../images/hero_agility.png";
 import heroStrength from "../images/hero_strength.png";
 import heroIntelligence from "../images/hero_intelligence.png";
+import heroUniversal from "../images/hero_universal.png";
 
 // inti state
 let heroesData;
@@ -30,6 +31,7 @@ const main = async () => {
     ${filterHeroesBasePrimaryAttr(heroesData.data.constants.heroes, "str")}
     ${filterHeroesBasePrimaryAttr(heroesData.data.constants.heroes, "agi")}
     ${filterHeroesBasePrimaryAttr(heroesData.data.constants.heroes, "int")}
+    ${filterHeroesBasePrimaryAttr(heroesData.data.constants.heroes, "all")}
   `;
 };
 
@@ -43,6 +45,7 @@ main();
  */
 
 const filterHeroesBasePrimaryAttr = (heroes, primaryAttribute) => {
+  console.log(heroes);
   heroes = heroes.filter(
     (hero) => hero["stats"]["primaryAttribute"] === primaryAttribute
   );
@@ -69,8 +72,10 @@ const filterHeroesBasePrimaryAttr = (heroes, primaryAttribute) => {
     pA = heroAgility;
   } else if (PRIMARY_ATTR_LIST[primaryAttribute] === "hero_strength") {
     pA = heroStrength;
-  } else {
+  } else if (PRIMARY_ATTR_LIST[primaryAttribute] === "hero_intelligence") {
     pA = heroIntelligence;
+  } else {
+    pA = heroUniversal;
   }
 
   return `

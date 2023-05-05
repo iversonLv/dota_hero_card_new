@@ -3,6 +3,7 @@ import { rolesQuery } from "./query/roles.js";
 import { abilitiesQuery } from "./query/abilities.js";
 
 // image
+import heroUniversal from "../images/hero_universal.png";
 import heroAgility from "../images/hero_agility.png";
 import heroStrength from "../images/hero_strength.png";
 import heroIntelligence from "../images/hero_intelligence.png";
@@ -72,9 +73,6 @@ heroAttackTypeNode.appendChild(heroAttackTypeDom);
 // before the card flip, won't show the node
 heroAttackTypeNode.style.display = "none";
 
-// for base str, agi, int
-const heroBaseNode = document.getElementsByClassName("hero-base")[0];
-
 // hero abilities
 const heroAbilitiesListNode = document.getElementsByClassName(
   "hero-abilities-list"
@@ -92,6 +90,9 @@ heroVideoNode.appendChild(heroVideoSourceNode);
 const complexityListNode = document.createElement("div");
 complexityListNode.classList.add("complexity-list");
 heroCardFrontNode.appendChild(complexityListNode);
+
+// for base str, agi, int
+const heroBaseNode = document.getElementsByClassName("hero-base")[0];
 
 // hero mp hp
 const heroMpHpNode = heroCardFrontNode.getElementsByClassName("hero-mp-hp")[0];
@@ -474,20 +475,18 @@ function setHeroBase(
   // here different primary attr hero, the first attr will be his primary attr
   if (primaryAttribute === "str") {
     heroBaseStrGainDom.classList.add("primary-att");
-    heroBaseNode.appendChild(heroBaseStrGainDom);
-    heroBaseNode.appendChild(heroBaseIntGainDom);
-    heroBaseNode.appendChild(heroBaseAgiGainDom);
   } else if (primaryAttribute === "int") {
     heroBaseIntGainDom.classList.add("primary-att");
-    heroBaseNode.appendChild(heroBaseIntGainDom);
-    heroBaseNode.appendChild(heroBaseAgiGainDom);
-    heroBaseNode.appendChild(heroBaseStrGainDom);
   } else if (primaryAttribute === "agi") {
     heroBaseAgiGainDom.classList.add("primary-att");
-    heroBaseNode.appendChild(heroBaseAgiGainDom);
-    heroBaseNode.appendChild(heroBaseStrGainDom);
-    heroBaseNode.appendChild(heroBaseIntGainDom);
+  } else {
+    heroBaseStrGainDom.classList.add("primary-att");
+    heroBaseIntGainDom.classList.add("primary-att");
+    heroBaseAgiGainDom.classList.add("primary-att");
   }
+  heroBaseNode.appendChild(heroBaseStrGainDom);
+  heroBaseNode.appendChild(heroBaseIntGainDom);
+  heroBaseNode.appendChild(heroBaseAgiGainDom);
 }
 
 /**
@@ -500,8 +499,10 @@ function setHeroPrimaryAttribute(primaryAttribute) {
     pA = heroAgility;
   } else if (PRIMARY_ATTR_LIST[primaryAttribute] === "hero_strength") {
     pA = heroStrength;
-  } else {
+  } else if (PRIMARY_ATTR_LIST[primaryAttribute] === "hero_intelligence") {
     pA = heroIntelligence;
+  } else {
+    pA = heroUniversal;
   }
   heroPrimaryAttrDom.setAttribute("src", pA);
 }

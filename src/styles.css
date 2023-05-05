@@ -209,16 +209,12 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  position: absolute;
-  left: 4px;
-  top: 7px;
   color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-base div {
   padding: 2px 0;
   font-size: 16px;
-  margin-right: 10px;
   font-weight: bold;
   padding-left: 30px;
   background-repeat: no-repeat;

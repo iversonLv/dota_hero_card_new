@@ -2,6 +2,7 @@ export const PRIMARY_ATTR_LIST = {
   str: "hero_strength",
   int: "hero_intelligence",
   agi: "hero_agility",
+  all: "hero_universal",
 };
 
 export const IMG_ONERROR = "./images/Dota2Logo.svg";
