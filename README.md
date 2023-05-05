@@ -6,6 +6,10 @@
 - HTML
 - GraphQL for API
 
+## FYI:
+- After update file, kindly build again in order page update latest especially html files and image
+- You need to use your own STRATZ_TOKEN from https://stratz.com/api (it's free for dev) in config.js or your project env which named STRATZ_TOKEN
+
 Here we are going to use API from https://stratz.com/dashboard
 
 https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Scripting/API#DOTA_UNIT_TARGET_TEAM
@@ -32,7 +36,7 @@ https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Scripting/API#DOT
   - [x] main()
   - [x] filter bar
   - [x] heroes list
-- [] Preview/Deploy
+- [x] Preview/Deploy
 
 ## Part2 card
  - [x] images folder
